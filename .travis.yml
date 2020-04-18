@@ -17,6 +17,8 @@ env:
   - UNIT_TEST=1
 addons:
   apt:
+    sources:
+    - trusty-media
     packages:
     - libcurl4-openssl-dev
     - python-numpy
@@ -35,13 +37,8 @@ addons:
     - python-numpy
     - python-scipy
     - cython
+    - ffmpeg
 install:
-  - wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
-    -O /tmp/ffmpeg-release.tar.xz
-  - mkdir /tmp/ffmpeg-release
-  - tar -C /tmp/ffmpeg-release --strip 1 -xvf /tmp/ffmpeg-release.tar.xz
-  - export PATH=/tmp/ffmpeg-release:$PATH
-  - ffmpeg -version
   - pip install --upgrade pip
   - make setup
   - pip install coveralls
