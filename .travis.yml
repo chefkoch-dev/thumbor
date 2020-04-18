@@ -28,7 +28,6 @@ addons:
     - libpng-dev
     - libx264-dev
     - libass-dev
-    - libvpx1
     - libvpx-dev
     - libwebp-dev
     - webp
